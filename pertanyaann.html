@@ -1,24 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Bonus Salon Pelanggan</title>
+    <title>Total Pembelian Pelanggan</title>
 </head>
 <body>
     <script>
-        let totalKunjungan = 15; 
+        let hargaBarang = 10000; 
+        let jumlahBarang = 55;   
 
-        const kunjunganUntukBonus = 10; 
-        let sisaKunjungan = totalKunjungan % kunjunganUntukBonus; 
-        let bonus = Math.floor(totalKunjungan / kunjunganUntukBonus);
+        const batasDiskon = 50;       
+        const persentaseDiskon = 0.10;
 
-        console.log("Total kunjungan: " + totalKunjungan);
-        console.log("Total potongan kupon yang dimiliki: " + sisaKunjungan);
+        let totalHarga = hargaBarang * jumlahBarang;
 
-        if (bonus > 0) {
-            console.log("Anda sudah mendapatkan " + bonus + " kali kunjungan gratis!");
-        } else {
-            console.log("Anda belum mendapatkan kunjungan gratis.");
+        let diskon = 0;
+        if (jumlahBarang > batasDiskon) {
+            diskon = totalHarga * persentaseDiskon;
         }
+
+        let hargaSetelahDiskon = totalHarga - diskon;
+
+        console.log("Harga keseluruhan tanpa diskon: Rp" + totalHarga);
+        console.log("Diskon yang diberikan: Rp" + diskon);
+        console.log("Harga setelah diskon: Rp" + hargaSetelahDiskon);
     </script>
 </body>
 </html>
